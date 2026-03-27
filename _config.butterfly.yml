@@ -1,0 +1,391 @@
+# =============================================================================
+#  Butterfly 主题配置 - AI Coder Hub
+#  定位：以 AI 技术分享为核心的全栈开发者博客
+#  风格：深色模式优先 / 极客风 / One Dark Pro 代码主题
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# 导航栏 Navigation
+# ---------------------------------------------------------------------------
+nav:
+  logo: # 可放置 Logo 图片 URL
+  display_title: true
+  fixed: true # 固定导航栏
+
+# ---------------------------------------------------------------------------
+# 菜单 Menu
+# ---------------------------------------------------------------------------
+menu:
+  首页: / || fas fa-home
+  AI技术||fas fa-robot:
+    AIGC应用: /categories/AIGC应用/ || fas fa-wand-magic-sparkles
+    大模型工程化: /categories/大模型工程化/ || fas fa-microchip
+    技术洞察: /categories/技术洞察/ || fas fa-lightbulb
+  归档: /archives/ || fas fa-archive
+  标签: /tags/ || fas fa-tags
+  关于: /about/ || fas fa-user-astronaut
+
+# ---------------------------------------------------------------------------
+# 代码块 Code Blocks
+# ---------------------------------------------------------------------------
+highlight_theme: mac # mac | mac light | default | ...
+highlight_copy: true # 复制按钮
+highlight_lang: true # 显示语言
+highlight_shrink: false # 代码收缩
+highlight_height_limit: 400 # 超出高度折叠（px）
+code_word_wrap: true
+
+# ---------------------------------------------------------------------------
+# 社交链接 Social
+# ---------------------------------------------------------------------------
+social:
+  fab fa-github: https://github.com/alaiazheng || Github
+  fas fa-envelope: mailto:your@email.com || Email
+
+# ---------------------------------------------------------------------------
+# 图片 Image
+# ---------------------------------------------------------------------------
+# 首页封面图
+index_img: https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1920&q=80
+
+# 默认文章封面
+default_top_img: https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80
+
+# 归档页
+archive_img: https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80
+
+# 标签页
+tag_img: https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80
+
+# 分类页
+category_img: https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1920&q=80
+
+# 头像
+avatar:
+  img: https://avatars.githubusercontent.com/u/alaiazheng
+  effect: true # 头像动画
+
+# favicon
+favicon: /img/favicon.png
+
+# ---------------------------------------------------------------------------
+# 文章页面 Post Page
+# ---------------------------------------------------------------------------
+post_meta:
+  page:
+    date_type: created # 显示创建日期
+    date_format: date # date | relative
+    categories: true
+    tags: true
+    label: true
+  post:
+    date_type: both # 显示创建和更新日期
+    date_format: date
+    categories: true
+    tags: true
+    label: true
+
+# 文章版权信息
+post_copyright:
+  enable: true
+  decode: false
+  author_href:
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+# 打赏
+reward:
+  enable: false
+
+# 文章目录
+toc:
+  post: true
+  page: false
+  number: true
+  expand: false
+  style_simple: false
+  scroll_percent: true
+
+# 文章锚点
+anchor:
+  auto_update: true
+  click:
+    scroll_header_offset: 0
+
+# 相关推荐
+related_post:
+  enable: true
+  limit: 6
+  date_type: created
+
+# 文章过期提醒
+noticeOutdate:
+  enable: true
+  style: flat # flat | simple
+  limit_day: 180
+  position: top
+
+# 文字统计
+wordcount:
+  enable: true
+  post_wordcount: true
+  min2read: true
+  total_wordcount: true
+
+# ---------------------------------------------------------------------------
+# 侧边栏 Aside
+# ---------------------------------------------------------------------------
+aside:
+  enable: true
+  hide: false
+  button: true
+  mobile: true
+  position: right
+  display:
+    archive: true
+    tag: true
+    category: true
+  card_author:
+    enable: true
+    description: "🤖 AI 全栈开发者 | 探索 AIGC 的无限可能"
+    button:
+      enable: true
+      icon: fab fa-github
+      text: Follow Me
+      link: https://github.com/alaiazheng
+  card_announcement:
+    enable: true
+    content: "🚀 欢迎来到 AI Coder Hub！这里聚焦 AIGC 应用、大模型工程化与技术洞察，助你紧跟 AI 浪潮。"
+  card_recent_post:
+    enable: true
+    limit: 5
+    sort: date
+    sort_order:
+  card_categories:
+    enable: true
+    limit: 8
+    expand: none
+    sort_order:
+  card_tags:
+    enable: true
+    limit: 40
+    color: true
+    orderby: random
+    order: 1
+    sort_order:
+  card_archives:
+    enable: true
+    type: monthly
+    format: MMMM YYYY
+    order: -1
+    limit: 8
+    sort_order:
+  card_webinfo:
+    enable: true
+    post_count: true
+    last_push_date: true
+    sort_order:
+
+# ---------------------------------------------------------------------------
+# 页脚 Footer
+# ---------------------------------------------------------------------------
+footer:
+  owner:
+    enable: true
+    since: 2026
+  custom_text: '<p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme <a href="https://butterfly.js.org/" target="_blank">Butterfly</a></p><p>🤖 Built with AI, for AI enthusiasts</p>'
+  copyright: true
+
+# ---------------------------------------------------------------------------
+# 右下角按钮 Rightside
+# ---------------------------------------------------------------------------
+readmode: true # 阅读模式
+darkmode:
+  enable: true
+  button: true
+  autoChangeMode: 1 # 1: 跟随系统 | 2: 18:00-6:00 自动暗色
+
+# 回到顶部
+rightside_scroll_percent: true
+
+# ---------------------------------------------------------------------------
+# 搜索 Search
+# ---------------------------------------------------------------------------
+search:
+  use:
+    - local_search
+  placeholder: "搜索文章..."
+
+local_search:
+  enable: true
+  preload: true
+  CDN:
+
+algolia_search:
+  enable: false
+
+# ---------------------------------------------------------------------------
+# 数学公式 Math
+# ---------------------------------------------------------------------------
+mathjax:
+  enable: true
+  per_page: true
+
+# ---------------------------------------------------------------------------
+# 评论系统 Comments
+# ---------------------------------------------------------------------------
+comments:
+  use:
+    - Waline
+  text: true
+  lazyload: true
+  count: true
+  card_post_count: false
+
+# Waline 评论（轻量、支持 Markdown、表情、登录）
+waline:
+  serverURL: # 部署 Waline 后填入服务端 URL，例如：https://your-waline.vercel.app
+  bg:
+  pageview: true
+  option:
+    locale:
+      placeholder: "欢迎留言讨论～支持 Markdown 语法 🎉"
+
+# ---------------------------------------------------------------------------
+# 在线聊天 Chat（AI 助手可用此入口）
+# ---------------------------------------------------------------------------
+chat_btn: false
+chat_hide_show: false
+
+# ---------------------------------------------------------------------------
+# 分析统计 Analytics
+# ---------------------------------------------------------------------------
+busuanzi:
+  site_uv: true # 访客数
+  site_pv: true # 访问量
+  page_pv: true # 每篇文章阅读量
+
+# ---------------------------------------------------------------------------
+# 访问量/数据看板（不蒜子统计 + 侧边栏展示）
+# ---------------------------------------------------------------------------
+# 在侧边栏 card_webinfo 中已开启，会显示：
+# - 文章总数
+# - 最后更新日期
+# 配合 busuanzi 显示访问量
+
+# ---------------------------------------------------------------------------
+# 动画特效 Animation
+# ---------------------------------------------------------------------------
+# 页面加载动画
+preloader:
+  enable: true
+  source: 1 # 1-3 不同加载动画
+  pace_css_url:
+
+# 是否开启页面过渡动画
+enter_transitions: true
+
+# 打字机效果（首页副标题）
+subtitle:
+  enable: true
+  effect: true
+  startDelay: 300
+  typeSpeed: 150
+  backSpeed: 50
+  loop: true
+  source: false
+  sub:
+    - "🚀 探索 AIGC 应用的无限可能"
+    - "🧠 大模型工程化实战分享"
+    - "💡 AI 技术洞察与趋势解读"
+    - "⚡ 从原型到生产的全栈开发"
+    - "🔮 Prompt Engineering 最佳实践"
+
+# 侧栏动画
+animations: true
+
+# 鼠标点击特效
+fireworks:
+  enable: true
+  zIndex: 9999
+
+# 页面加载烟花效果
+click_heart:
+  enable: false
+
+# ---------------------------------------------------------------------------
+# 灯箱 Lightbox
+# ---------------------------------------------------------------------------
+medium_zoom: false
+fancybox: true
+
+# ---------------------------------------------------------------------------
+# 标签外挂 Tag Plugins
+# ---------------------------------------------------------------------------
+mermaid:
+  enable: true
+  theme:
+    light: default
+    dark: dark
+
+note:
+  style: flat # simple | modern | flat | disabled
+  icons: true
+  border_radius: 3
+  light_bg_offset: 0
+
+# ---------------------------------------------------------------------------
+# 字体 Font
+# ---------------------------------------------------------------------------
+font:
+  global-font-size: 16px
+  code-font-size: 14px
+  font-family: "'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+  code-font-family: "'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace"
+
+# ---------------------------------------------------------------------------
+# 自定义 CSS 和 JS
+# ---------------------------------------------------------------------------
+inject:
+  head:
+    # Google Fonts - JetBrains Mono + Noto Sans SC
+    - '<link rel="preconnect" href="https://fonts.googleapis.com">'
+    - '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+    - '<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">'
+    - '<link rel="stylesheet" href="/css/custom.css">'
+  bottom:
+    - '<script src="/js/custom.js"></script>'
+
+# ---------------------------------------------------------------------------
+# CDN 设置
+# ---------------------------------------------------------------------------
+CDN:
+  option:
+    # 第三方 CDN 源
+    third_party_provider: cdnjs
+
+# ---------------------------------------------------------------------------
+# 页面配置 Page
+# ---------------------------------------------------------------------------
+# 标签页
+tag_ui: colorful # color | colorful
+# 分类页
+category_ui: neumorphism # none | index | neumorphism
+
+# ---------------------------------------------------------------------------
+# 开启图标
+# ---------------------------------------------------------------------------
+icons:
+  fontawesome: true
+
+# ---------------------------------------------------------------------------
+# 标签页面 / 分类页面设置
+# ---------------------------------------------------------------------------
+tag_per_img:
+category_per_img:
+
+# ---------------------------------------------------------------------------
+# 配置 PWA（可选）
+# ---------------------------------------------------------------------------
+pwa:
+  enable: false

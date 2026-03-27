@@ -1,0 +1,419 @@
+/* =============================================================================
+   AI Coder Hub - Custom Styles
+   One Dark Pro 配色 + 极客风格 + JetBrains Mono
+   ============================================================================= */
+
+/* ---------------------------------------------------------------------------
+   CSS 变量 - One Dark Pro 配色方案
+   --------------------------------------------------------------------------- */
+:root {
+  /* One Dark Pro 核心色 */
+  --onedark-bg: #282c34;
+  --onedark-bg-light: #21252b;
+  --onedark-bg-lighter: #2c313a;
+  --onedark-bg-highlight: #3e4451;
+  --onedark-fg: #abb2bf;
+  --onedark-fg-light: #828997;
+  --onedark-red: #e06c75;
+  --onedark-orange: #d19a66;
+  --onedark-yellow: #e5c07b;
+  --onedark-green: #98c379;
+  --onedark-cyan: #56b6c2;
+  --onedark-blue: #61afef;
+  --onedark-purple: #c678dd;
+  --onedark-magenta: #c678dd;
+
+  /* AI 品牌色 */
+  --ai-primary: #61afef;
+  --ai-primary-rgb: 97, 175, 239;
+  --ai-secondary: #c678dd;
+  --ai-accent: #56b6c2;
+  --ai-glow: rgba(97, 175, 239, 0.3);
+  --ai-glow-strong: rgba(97, 175, 239, 0.6);
+
+  /* 渐变 */
+  --gradient-primary: linear-gradient(135deg, #61afef 0%, #c678dd 50%, #56b6c2 100%);
+  --gradient-card: linear-gradient(145deg, rgba(40, 44, 52, 0.8), rgba(33, 37, 43, 0.9));
+  --gradient-hero: linear-gradient(135deg, #0a0e17 0%, #1a1e2e 30%, #0d1321 60%, #141b2d 100%);
+}
+
+/* ---------------------------------------------------------------------------
+   深色模式全局覆盖
+   --------------------------------------------------------------------------- */
+[data-theme="dark"] {
+  --global-bg: #0a0e17;
+  --second-bg: #141b2d;
+  --card-bg: rgba(20, 27, 45, 0.85);
+  --font-color: #c8ccd4;
+  --hr-border: rgba(171, 178, 191, 0.15);
+  --text-bg-hover: rgba(97, 175, 239, 0.1);
+}
+
+/* ---------------------------------------------------------------------------
+   全局字体
+   --------------------------------------------------------------------------- */
+body {
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+code, pre, .highlight, .code-area, kbd {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Source Code Pro', Consolas, monospace !important;
+}
+
+/* ---------------------------------------------------------------------------
+   导航栏 - 毛玻璃效果
+   --------------------------------------------------------------------------- */
+#nav {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(10, 14, 23, 0.75) !important;
+  border-bottom: 1px solid rgba(97, 175, 239, 0.1);
+}
+
+#nav.fixed {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+#nav a {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#nav a:hover {
+  color: var(--ai-primary) !important;
+  text-shadow: 0 0 10px var(--ai-glow);
+}
+
+/* ---------------------------------------------------------------------------
+   首页 - 打字机效果增强
+   --------------------------------------------------------------------------- */
+#page-header {
+  background: var(--gradient-hero) !important;
+}
+
+#page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(97, 175, 239, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(198, 120, 221, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(86, 182, 194, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#subtitle {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 1.2rem;
+  text-shadow: 0 0 20px var(--ai-glow);
+}
+
+/* 打字机光标颜色 */
+.typed-cursor {
+  color: var(--ai-primary) !important;
+  text-shadow: 0 0 10px var(--ai-glow-strong);
+}
+
+/* ---------------------------------------------------------------------------
+   卡片样式 - 极客风
+   --------------------------------------------------------------------------- */
+[data-theme="dark"] #recent-posts > .recent-post-item,
+[data-theme="dark"] .card-widget {
+  background: rgba(20, 27, 45, 0.7) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(97, 175, 239, 0.08);
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+[data-theme="dark"] #recent-posts > .recent-post-item:hover,
+[data-theme="dark"] .card-widget:hover {
+  border-color: rgba(97, 175, 239, 0.25);
+  box-shadow: 
+    0 8px 30px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(97, 175, 239, 0.05),
+    inset 0 1px 0 rgba(97, 175, 239, 0.1);
+  transform: translateY(-4px);
+}
+
+/* 文章卡片封面 */
+[data-theme="dark"] .recent-post-item .post_cover img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.6s ease;
+}
+
+[data-theme="dark"] .recent-post-item:hover .post_cover img {
+  transform: scale(1.08);
+  filter: brightness(1.1) saturate(1.2);
+}
+
+/* ---------------------------------------------------------------------------
+   文章标题 - 渐变效果
+   --------------------------------------------------------------------------- */
+[data-theme="dark"] #recent-posts .recent-post-info .article-title,
+[data-theme="dark"] #post-info .post-title {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="dark"] #recent-posts .recent-post-info .article-title:hover {
+  text-shadow: none;
+  filter: brightness(1.2);
+}
+
+/* ---------------------------------------------------------------------------
+   标签 - 霓虹效果
+   --------------------------------------------------------------------------- */
+[data-theme="dark"] .article-meta a,
+[data-theme="dark"] #tag-page-tags a,
+[data-theme="dark"] a.tag-list-link {
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .article-meta a:hover,
+[data-theme="dark"] #tag-page-tags a:hover,
+[data-theme="dark"] a.tag-list-link:hover {
+  box-shadow: 0 0 8px var(--ai-glow);
+}
+
+/* ---------------------------------------------------------------------------
+   代码块 - One Dark Pro 强化
+   --------------------------------------------------------------------------- */
+[data-theme="dark"] figure.highlight,
+[data-theme="dark"] pre {
+  background: #1e222a !important;
+  border: 1px solid rgba(97, 175, 239, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* macOS 窗口按钮效果 */
+[data-theme="dark"] figure.highlight::before,
+[data-theme="dark"] .highlight-tools {
+  background: #1e222a !important;
+}
+
+/* 行号样式 */
+[data-theme="dark"] figure.highlight .line-numbers-rows {
+  border-right: 1px solid rgba(97, 175, 239, 0.1);
+}
+
+/* 代码选中背景 */
+[data-theme="dark"] code::selection,
+[data-theme="dark"] pre::selection {
+  background: rgba(97, 175, 239, 0.2);
+}
+
+/* ---------------------------------------------------------------------------
+   内联代码
+   --------------------------------------------------------------------------- */
+[data-theme="dark"] code:not([class]) {
+  background: rgba(97, 175, 239, 0.1);
+  color: var(--onedark-cyan);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.9em;
+  border: 1px solid rgba(97, 175, 239, 0.15);
+}
+
+/* ---------------------------------------------------------------------------
+   侧边栏
+   --------------------------------------------------------------------------- */
+[data-theme="dark"] .card-announcement .item-content {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+[data-theme="dark"] .card-tag-cloud a {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.8rem;
+}
+
+/* ---------------------------------------------------------------------------
+   滚动条 - 极客风
+   --------------------------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0e17;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--ai-primary), var(--ai-secondary));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--onedark-blue), var(--onedark-purple));
+  box-shadow: 0 0 10px var(--ai-glow);
+}
+
+/* ---------------------------------------------------------------------------
+   阅读进度条
+   --------------------------------------------------------------------------- */
+.pace .pace-progress {
+  background: var(--gradient-primary) !important;
+  height: 3px !important;
+  box-shadow: 0 0 10px var(--ai-glow), 0 0 5px var(--ai-glow);
+}
+
+/* ---------------------------------------------------------------------------
+   搜索框
+   --------------------------------------------------------------------------- */
+[data-theme="dark"] .search-dialog .search-input {
+  background: rgba(20, 27, 45, 0.9) !important;
+  border: 1px solid rgba(97, 175, 239, 0.2);
+  color: var(--onedark-fg);
+  font-family: 'JetBrains Mono', monospace;
+  border-radius: 8px;
+}
+
+[data-theme="dark"] .search-dialog .search-input:focus {
+  border-color: var(--ai-primary);
+  box-shadow: 0 0 15px var(--ai-glow);
+}
+
+/* ---------------------------------------------------------------------------
+   页脚
+   --------------------------------------------------------------------------- */
+[data-theme="dark"] #footer {
+  background: linear-gradient(180deg, transparent, rgba(10, 14, 23, 0.95)) !important;
+  border-top: 1px solid rgba(97, 175, 239, 0.05);
+}
+
+/* ---------------------------------------------------------------------------
+   回到顶部按钮
+   --------------------------------------------------------------------------- */
+[data-theme="dark"] #go-up {
+  background: var(--gradient-primary) !important;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(97, 175, 239, 0.3);
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] #go-up:hover {
+  box-shadow: 0 4px 25px rgba(97, 175, 239, 0.5);
+  transform: translateY(-3px);
+}
+
+/* ---------------------------------------------------------------------------
+   文章页 TOC 目录
+   --------------------------------------------------------------------------- */
+[data-theme="dark"] .toc-content .toc-link.active {
+  color: var(--ai-primary) !important;
+  border-left-color: var(--ai-primary) !important;
+}
+
+[data-theme="dark"] .toc-content .toc-link:hover {
+  color: var(--ai-secondary) !important;
+}
+
+/* ---------------------------------------------------------------------------
+   链接悬停效果
+   --------------------------------------------------------------------------- */
+[data-theme="dark"] .post-content a:not(.btn):not(.tag):not(.category) {
+  color: var(--ai-primary);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(97, 175, 239, 0.3);
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .post-content a:not(.btn):not(.tag):not(.category):hover {
+  color: var(--ai-secondary);
+  border-bottom-color: var(--ai-secondary);
+  text-shadow: 0 0 8px rgba(198, 120, 221, 0.3);
+}
+
+/* ---------------------------------------------------------------------------
+   引用块
+   --------------------------------------------------------------------------- */
+[data-theme="dark"] blockquote {
+  background: rgba(97, 175, 239, 0.05) !important;
+  border-left: 4px solid var(--ai-primary) !important;
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.5rem;
+}
+
+/* ---------------------------------------------------------------------------
+   表格
+   --------------------------------------------------------------------------- */
+[data-theme="dark"] table thead {
+  background: rgba(97, 175, 239, 0.1);
+}
+
+[data-theme="dark"] table tr:nth-child(2n) {
+  background: rgba(97, 175, 239, 0.03);
+}
+
+[data-theme="dark"] table td, 
+[data-theme="dark"] table th {
+  border-color: rgba(97, 175, 239, 0.1);
+}
+
+/* ---------------------------------------------------------------------------
+   数学公式
+   --------------------------------------------------------------------------- */
+[data-theme="dark"] .MathJax {
+  color: var(--onedark-fg) !important;
+}
+
+/* ---------------------------------------------------------------------------
+   分类/标签 页面 卡片
+   --------------------------------------------------------------------------- */
+[data-theme="dark"] .category-lists .category-list a,
+[data-theme="dark"] #tag-page-tags a {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ---------------------------------------------------------------------------
+   动画：赛博朋克风格的悬浮粒子（通过 JS 实现，CSS 辅助）
+   --------------------------------------------------------------------------- */
+#cyber-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+/* ---------------------------------------------------------------------------
+   响应式调整
+   --------------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  #subtitle {
+    font-size: 0.9rem;
+  }
+  
+  [data-theme="dark"] #recent-posts > .recent-post-item {
+    border-radius: 8px;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   自定义选中文字颜色
+   --------------------------------------------------------------------------- */
+::selection {
+  background: rgba(97, 175, 239, 0.25);
+  color: #fff;
+}
+
+::-moz-selection {
+  background: rgba(97, 175, 239, 0.25);
+  color: #fff;
+}

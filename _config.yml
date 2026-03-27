@@ -3,19 +3,22 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+title: AI Coder Hub
+subtitle: '以 AI 技术分享为核心的全栈开发者博客'
+description: '聚焦 AIGC 应用、大模型工程化、技术洞察，为程序员、AI 产品经理和技术决策者提供深度内容'
+keywords: AI, AIGC, 大模型, LLM, RAG, Agent, Prompt Engineering, 全栈开发, 深度学习
+author: alaiazheng
+language: zh-CN
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://alaiazheng.github.io/AI-blog
 root: /AI-blog/
-permalink: :year/:month/:day/:title/
+permalink: posts/:abbrlink.html
+abbrlink:
+  alg: crc32
+  rep: hex
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -44,9 +47,9 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
-syntax_highlighter: highlight.js
+syntax_highlighter: prismjs
 highlight:
-  line_number: true
+  line_number: false
   auto_detect: false
   tab_replace: ''
   wrap: true
@@ -54,7 +57,7 @@ highlight:
 prismjs:
   preprocess: true
   line_number: true
-  tab_replace: ''
+  tab_replace: '  '
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -97,9 +100,16 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+# 本地搜索
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html

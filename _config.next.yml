@@ -1,0 +1,151 @@
+# ============================================================
+# NexT 主题配置 - AI 技术博客
+# ============================================================
+
+# 主题方案 (Gemini 更现代，适合技术博客)
+# Schemes: Muse | Mist | Pisces | Gemini
+scheme: Gemini
+
+# 暗黑模式
+darkmode: true
+
+# ============================================================
+# 站点信息
+# ============================================================
+favicon:
+  small: /images/favicon-16x16-next.png
+  medium: /images/favicon-32x32-next.png
+
+# 页脚设置
+footer:
+  since: 2026
+  icon:
+    name: fa fa-robot
+    animated: true
+    color: "#808080"
+  copyright: alaiazheng
+  powered: false
+
+# ============================================================
+# 菜单导航
+# ============================================================
+menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
+  about: /about/ || fa fa-user
+
+# ============================================================
+# 侧栏设置
+# ============================================================
+sidebar:
+  position: left
+  display: post
+  padding: 18
+  offset: 12
+
+avatar:
+  url: https://avatars.githubusercontent.com/u/alaiazheng
+  rounded: true
+  rotated: false
+
+social:
+  GitHub: https://github.com/alaiazheng || fab fa-github
+
+social_icons:
+  enable: true
+  icons_only: false
+  transition: false
+
+# ============================================================
+# 文章设置
+# ============================================================
+
+# 显示阅读进度条
+reading_progress:
+  enable: true
+  position: top
+  color: "#37c6c0"
+  height: 3px
+
+# 回到顶部按钮
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: true
+
+# 代码块设置
+codeblock:
+  highlight_theme: night eighties
+  copy_button:
+    enable: true
+    style: mac
+
+# 显示目录
+toc:
+  enable: true
+  number: true
+  wrap: true
+  expand_all: false
+  max_depth: 4
+
+# ============================================================
+# 数学公式支持 (AI 博客必备)
+# ============================================================
+math:
+  every_page: false
+  mathjax:
+    enable: true
+    tags: none
+
+# ============================================================
+# 搜索功能
+# ============================================================
+local_search:
+  enable: true
+  trigger: auto
+  top_n_per_article: 1
+  unescape: false
+  preload: false
+
+# ============================================================
+# 动画效果
+# ============================================================
+motion:
+  enable: true
+  async: false
+  transition:
+    menu_item: fadeInDown
+    post_block: fadeIn
+    post_header: fadeInDown
+    post_body: fadeInDown
+    coll_header: fadeInLeft
+    sidebar: fadeInUp
+
+# ============================================================
+# 字体设置
+# ============================================================
+font:
+  enable: true
+  host: https://fonts.googleapis.com
+  global:
+    external: true
+    family: Noto Sans SC
+    size: 1
+  title:
+    external: true
+    family: Noto Sans SC
+    size:
+  headings:
+    external: true
+    family: Noto Sans SC
+    size:
+  posts:
+    external: true
+    family: Noto Sans SC
+    size:
+  codes:
+    external: true
+    family: JetBrains Mono
+    size: 0.875
